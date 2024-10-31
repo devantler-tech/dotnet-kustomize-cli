@@ -8,7 +8,6 @@
   <summary>Show/hide folder structure</summary>
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -29,19 +28,10 @@
 │       └── win-x64
 │           └── native
 └── Devantler.KustomizeCLI.Tests
-    ├── KustomizeTests
-    └── assets
-        └── k8s
-            ├── apps
-            ├── clusters
-            │   └── ksail-default
-            │       └── flux-system
-            └── infrastructure
-                └── controllers
+    └── KustomizeTests
 
-27 directories
+19 directories
 ```
-
 <!-- readme-tree end -->
 
 </details>
