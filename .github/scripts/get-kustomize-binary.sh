@@ -22,7 +22,7 @@ get() {
   local archiveType=$7
   latest_release=$(get_latest_release "$repo" "$os" "$arch")
   version=$(echo "$latest_release" | sed -E 's/.*_(v[0-9]+\.[0-9]+\.[0-9]+).*/\1/')
-  local url="https://github.com/$repo/releases/download/$binary/$version/$latest_release"
+  local url="https://github.com/$repo/releases/download/kustomize/$version/$latest_release"
 
   echo "Downloading $target_name from $url"
   if [ "$archiveType" = "tar" ]; then
