@@ -19,13 +19,17 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: 🎯 Get version
+        run: |
+          BINARY_VERSION=$(./Devantler.KustomizeCLI/runtimes/linux-x64/native/kustomize-linux-x64 version)
+          echo "BINARY_VERSION=$BINARY_VERSION" >> $GITHUB_ENV
       - name: ✍🏻 Create PR
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: Update Kustomize binary
-          title: Update Kustomize binary
+          title: Update Kustomize binary to ${{ env.BINARY_VERSION }}
           body: |
-            This PR updates the Kustomize binary used by Devantler.KustomizeCLI to the latest version.
+            This PR updates the Kustomize binary used by Devantler.KustomizeCLI to ${{ env.BINARY_VERSION }}.
           branch: update-kustomize-binary
           delete-branch: true
           labels: dependencies
