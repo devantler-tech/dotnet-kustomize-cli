@@ -53,9 +53,5 @@ You can execute the Kustomize CLI commands using the `Kustomize` class.
 ```csharp
 using Devantler.KustomizeCLI;
 
-var cmd = Kustomize.Command;
-
-cmd.WithArguments("build", "path/to/kustomization");
-
-await CLI.RunAsync(cmd, CancellationToken.None);
+var (exitCode, message) = await Kustomize.RunAsync(["arg1", "arg2"]);
 ```
