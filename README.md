@@ -30,7 +30,7 @@
 └── Devantler.KustomizeCLI.Tests
     └── KustomizeTests
 
-19 directories
+20 directories
 ```
 <!-- readme-tree end -->
 
