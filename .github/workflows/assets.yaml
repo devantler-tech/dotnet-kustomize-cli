@@ -26,7 +26,7 @@ jobs:
       - name: ✍🏻 Create PR
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: Update Kustomize binary
+          commit-message: Update Kustomize to ${{ env.BINARY_VERSION }}
           title: Update Kustomize binary to ${{ env.BINARY_VERSION }}
           body: |
             This PR updates the Kustomize binary used by Devantler.KustomizeCLI to ${{ env.BINARY_VERSION }}.
