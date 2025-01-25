@@ -13,7 +13,7 @@ public class RunAsyncTests
   public async Task RunAsync_Version_ReturnsVersion()
   {
     // Act
-    var (exitCode, message) = await Kustomize.RunAsync(["version"]);
+    var (exitCode, output) = await Kustomize.RunAsync(["version"]);
 
     // Assert
     Assert.Equal(0, exitCode);
