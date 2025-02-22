@@ -25,6 +25,8 @@ jobs:
           echo "BINARY_VERSION=$BINARY_VERSION" >> $GITHUB_ENV
       - name: ✍🏻 Create PR
         uses: peter-evans/create-pull-request@v7
+        env:
+          BINARY_VERSION: ${{ env.BINARY_VERSION }}
         with:
           commit-message: "feat: Update  Kustomize to ${{ env.BINARY_VERSION }}"
           title: "feat: Update Kustomize binary to ${{ env.BINARY_VERSION }}"
