@@ -13,24 +13,26 @@
 ├── .github
 │   ├── scripts
 │   └── workflows
-├── Devantler.KustomizeCLI
-│   └── runtimes
-│       ├── linux-arm64
-│       │   └── native
-│       ├── linux-x64
-│       │   └── native
-│       ├── osx-arm64
-│       │   └── native
-│       ├── osx-x64
-│       │   └── native
-│       ├── win-arm64
-│       │   └── native
-│       └── win-x64
-│           └── native
-└── Devantler.KustomizeCLI.Tests
-    └── KustomizeTests
+├── src
+│   └── Devantler.KustomizeCLI
+│       └── runtimes
+│           ├── linux-arm64
+│           │   └── native
+│           ├── linux-x64
+│           │   └── native
+│           ├── osx-arm64
+│           │   └── native
+│           ├── osx-x64
+│           │   └── native
+│           ├── win-arm64
+│           │   └── native
+│           └── win-x64
+│               └── native
+└── tests
+    └── Devantler.KustomizeCLI.Tests
+        └── KustomizeTests
 
-20 directories
+22 directories
 ```
 <!-- readme-tree end -->
 
