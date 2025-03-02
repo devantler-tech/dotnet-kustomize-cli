@@ -41,9 +41,9 @@ get() {
 
 repo="kubernetes-sigs/kustomize"
 
-get "$repo" "darwin" "arm64" "kustomize" "Devantler.KustomizeCLI/runtimes/osx-arm64/native" "kustomize-osx-arm64" "tar"
-get "$repo" "darwin" "amd64" "kustomize" "Devantler.KustomizeCLI/runtimes/osx-x64/native" "kustomize-osx-x64" "tar"
-get "$repo" "linux" "arm64" "kustomize" "Devantler.KustomizeCLI/runtimes/linux-arm64/native" "kustomize-linux-arm64" "tar"
-get "$repo" "linux" "amd64" "kustomize" "Devantler.KustomizeCLI/runtimes/linux-x64/native" "kustomize-linux-x64" "tar"
-get "$repo" "windows" "amd64" "kustomize.exe" "Devantler.KustomizeCLI/runtimes/win-x64/native" "kustomize-win-x64.exe" "zip"
-get "$repo" "windows" "arm64" "kustomize.exe" "Devantler.KustomizeCLI/runtimes/win-arm64/native" "kustomize-win-arm64.exe" "zip"
+get "$repo" "darwin" "arm64" "kustomize" "src/Devantler.KustomizeCLI/runtimes/osx-arm64/native" "kustomize-osx-arm64" "tar"
+get "$repo" "darwin" "amd64" "kustomize" "src/Devantler.KustomizeCLI/runtimes/osx-x64/native" "kustomize-osx-x64" "tar"
+get "$repo" "linux" "arm64" "kustomize" "src/Devantler.KustomizeCLI/runtimes/linux-arm64/native" "kustomize-linux-arm64" "tar"
+get "$repo" "linux" "amd64" "kustomize" "src/Devantler.KustomizeCLI/runtimes/linux-x64/native" "kustomize-linux-x64" "tar"
+get "$repo" "windows" "amd64" "kustomize.exe" "src/Devantler.KustomizeCLI/runtimes/win-x64/native" "kustomize-win-x64.exe" "zip"
+get "$repo" "windows" "arm64" "kustomize.exe" "src/Devantler.KustomizeCLI/runtimes/win-arm64/native" "kustomize-win-arm64.exe" "zip"
