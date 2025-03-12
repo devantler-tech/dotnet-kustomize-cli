@@ -11,18 +11,19 @@ jobs:
   download-binary:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: true
-      - name: ⤵️ Get Kustomize binary
-        run: |
-          ./.github/scripts/get-kustomize-binary.sh
       - name: Generate GitHub App Token
         uses: tibdex/github-app-token@v2
         id: generate-token
         with:
           app_id: ${{ vars.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          token: ${{ steps.generate-token.outputs.token }}
+      - name: ⤵️ Get Kustomize binary
+        run: |
+          ./.github/scripts/get-kustomize-binary.sh
       - name: 🎯 Get version
         run: |
           BINARY_VERSION=$(./src/Devantler.KustomizeCLI/runtimes/linux-x64/native/kustomize-linux-x64 version)
