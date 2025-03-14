@@ -1,4 +1,4 @@
-name: Assets
+name: Embed Binaries
 
 on:
   schedule:
@@ -8,40 +8,10 @@ on:
 permissions: {}
 
 jobs:
-  download-binary:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate GitHub App Token
-        uses: tibdex/github-app-token@v2
-        id: generate-token
-        with:
-          app_id: ${{ vars.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
-      - uses: actions/checkout@v4
-        with:
-          lfs: true
-          token: ${{ steps.generate-token.outputs.token }}
-      - name: ⤵️ Get Kustomize binary
-        run: |
-          ./.github/scripts/get-kustomize-binary.sh
-      - name: 🎯 Get version
-        run: |
-          BINARY_VERSION=$(./src/Devantler.KustomizeCLI/runtimes/linux-x64/native/kustomize-linux-x64 version)
-          echo "BINARY_VERSION=$BINARY_VERSION" >> $GITHUB_ENV
-      - name: ✍🏻 Create PR
-        uses: peter-evans/create-pull-request@v7
-        env:
-          BINARY_VERSION: ${{ env.BINARY_VERSION }}
-        with:
-          commit-message: "feat: Update  Kustomize to ${{ env.BINARY_VERSION }}"
-          title: "feat: Update Kustomize binary to ${{ env.BINARY_VERSION }}"
-          body: |
-            This PR updates the Kustomize binary used by Devantler.KustomizeCLI to ${{ env.BINARY_VERSION }}.
-          branch: update-kustomize-binary
-          delete-branch: true
-          labels: dependencies
-          reviewers: devantler
-          assignees: devantler
-          signoff: true
-          token: ${{ steps.generate-token.outputs.token }}
-          sign-commits: true
+  embed-binaries:
+    uses: devantler-tech/workflows/.github/workflows/dotnet-embed-binaries.yaml@main
+    secrets: inherit
+    with:
+      BINARY_NAME: kustomize
+      DOTNET_PROJECT_NAME: Devantler.KustomizeCLI
+      SCRIPT_PATH: scripts/get-kustomize-binary.sh
