@@ -4,48 +4,21 @@
 [![Test](https://github.com/devantler-tech/dotnet-kustomize-cli/actions/workflows/test.yaml/badge.svg)](https://github.com/devantler-tech/dotnet-kustomize-cli/actions/workflows/test.yaml)
 [![codecov](https://codecov.io/gh/devantler-tech/dotnet-kustomize-cli/graph/badge.svg?token=RhQPb4fE7z)](https://codecov.io/gh/devantler-tech/dotnet-kustomize-cli)
 
-<details>
-  <summary>Show/hide folder structure</summary>
-
-<!-- readme-tree start -->
-```
-.
-├── .github
-│   └── workflows
-├── scripts
-├── src
-│   └── Devantler.KustomizeCLI
-│       └── runtimes
-│           ├── linux-arm64
-│           │   └── native
-│           ├── linux-x64
-│           │   └── native
-│           ├── osx-arm64
-│           │   └── native
-│           ├── osx-x64
-│           │   └── native
-│           ├── win-arm64
-│           │   └── native
-│           └── win-x64
-│               └── native
-└── tests
-    └── Devantler.KustomizeCLI.Tests
-        └── KustomizeTests
-
-22 directories
-```
-<!-- readme-tree end -->
-
-</details>
-
 A simple .NET library that embeds the Kustomize CLI.
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- .NET 9.0 or later
+- [Kustomize CLI](https://kubectl.docs.kubernetes.io/installation/kustomize/) installed and available in your system's PATH
+
+### Installation
+
 To get started, you can install the package from NuGet.
 
 ```bash
-dotnet add package Devantler.KustomizeCLI
+dotnet add package DevantlerTech.KustomizeCLI
 ```
 
 ## 📝 Usage
@@ -53,7 +26,7 @@ dotnet add package Devantler.KustomizeCLI
 You can execute the Kustomize CLI commands using the `Kustomize` class.
 
 ```csharp
-using Devantler.KustomizeCLI;
+using DevantlerTech.KustomizeCLI;
 
 var (exitCode, output) = await Kustomize.RunAsync(["arg1", "arg2"]);
 ```
