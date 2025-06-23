@@ -15,7 +15,7 @@ public static class Kustomize
   {
     get
     {
-      string binaryName = "kustomize";
+      string binaryName = OperatingSystem.IsWindows() ? "kustomize.exe" : "kustomize";
       string? pathEnv = Environment.GetEnvironmentVariable("PATH");
 
       if (!string.IsNullOrEmpty(pathEnv))
