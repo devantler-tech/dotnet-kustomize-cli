@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     if: github.event.pull_request.draft == false
     steps:
-      - name: Install Kubeconform CLI
+      - name: Install Kustomize CLI
         uses: jaxxstorm/action-install-gh-release@v2.1.0
         with:
           repo: kubernetes-sigs/kustomize
