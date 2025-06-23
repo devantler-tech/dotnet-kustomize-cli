@@ -11,7 +11,7 @@ public static class Kustomize
   /// <summary>
   /// The Kustomize CLI command.
   /// </summary>
-  static Command Command
+  public static Command Command
   {
     get
     {
