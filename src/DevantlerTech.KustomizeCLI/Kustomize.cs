@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using CliWrap;
 using CliWrap.Buffered;
 
